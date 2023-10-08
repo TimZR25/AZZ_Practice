@@ -11,6 +11,39 @@ namespace AZZ_Practice_1
             Task34();
         }
 
+        private static int[][] GetArray(int M, int N)
+        {
+            int[][] arr = new int[M][];
+            for (int i = 0; i < M; i++)
+            {
+                arr[i] = new int[N];
+            }
+            return arr;
+        } //инициализирует двумерный массив
+
+        private static void PrintArrayReverse(int[] arr)
+        {
+            Console.WriteLine("Реверснутый массив");
+
+            for (int i = (arr.Length - 1); i >= 0; i--)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine("\n");
+        }
+
+        private static void PrintArray(int[][] arr)
+        {
+            Console.WriteLine("\nДвумерный массив");
+
+            foreach (int[] rows in arr)
+            {
+                foreach (int item in rows)
+                    Console.Write(item + " ");
+                Console.WriteLine("");
+            }
+        }
+
         private static void FillArraySpiral(int[][] arr)
         {
             int count = 1;
@@ -57,36 +90,29 @@ namespace AZZ_Practice_1
             }
         }
 
-        private static int[][] GetArray(int M, int N)
+        private static void FillArrayDiagonal(int[][] arr)
         {
-            int[][] arr = new int[M][];
-            for (int i = 0; i < M; i++)
+            int N = arr.Length;
+
+            for (int i = 0; i < 2; i++)
             {
-                arr[i] = new int[N];
+                for (int j = 0; j < N; j++)
+                {
+                    arr[i][j] = 1;
+                }
             }
-            return arr;
-        } //инициализирует двумерный массив
 
-        private static void PrintArrayReverse(int[] arr)
-        {
-            Console.WriteLine("Реверснутый массив");
 
-            for (int i = (arr.Length - 1); i >= 0; i--)
+            int count = 0;
+            for (int i = 2; i < N; i++)
             {
-                Console.Write(arr[i] + " ");
-            }
-            Console.WriteLine("\n");
-        }
 
-        private static void PrintArray(int[][] arr)
-        {
-            Console.WriteLine("\nДвумерный массив");
-
-            foreach (int[] rows in arr)
-            {
-                foreach (int item in rows)
-                    Console.Write(item + " ");
-                Console.WriteLine("");
+                for (int j = 0; j < N; j++)
+                {
+                    if (count >= j) continue;
+                    arr[i][j] = 1;
+                }
+                count++;
             }
         }
 
@@ -116,26 +142,7 @@ namespace AZZ_Practice_1
 
             int[][] arr = GetArray(N, N);
 
-            for (int i = 0; i < 2; i++)
-            {
-                for (int j = 0; j < N; j++)
-                {
-                    arr[i][j] = 1;
-                }
-            }
-
-
-            int count = 0;
-            for (int i = 2; i < N; i++)
-            {
-
-                for (int j = 0; j < N; j++)
-                {
-                    if (count >= j) continue;
-                    arr[i][j] = 1;
-                }
-                count++;
-            }
+            FillArrayDiagonal(arr);
 
             PrintArray(arr);
             Console.WriteLine();

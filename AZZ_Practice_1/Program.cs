@@ -9,6 +9,7 @@ namespace AZZ_Practice_1
             Task1();
             Task2();
             Task34();
+            int t = 5;
         }
 
         private static int[][] GetArray(int M, int N)

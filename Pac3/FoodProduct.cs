@@ -94,20 +94,20 @@ namespace Prac3_3
         {
             Name = name;
             Weight = weight;
-            Temperature = temperature;
             HeatCapacity = heatCapacity;
             MaxTemperature = maxTemperature;
             MinTemperature = minTemperature;
+            Temperature = temperature;
         }
 
         public FoodProduct(FoodProduct foodProduct)
         {
             Name = foodProduct.Name;
             Weight = foodProduct.Weight;
-            Temperature = foodProduct.Temperature;
             HeatCapacity = foodProduct.HeatCapacity;
             MaxTemperature = foodProduct.MaxTemperature;
             MinTemperature = foodProduct.MinTemperature;
+            Temperature = foodProduct.Temperature;
         }
 
         public void Print()

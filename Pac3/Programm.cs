@@ -17,6 +17,7 @@ namespace Prac3_3
 
     class Programm
     {
+
         public static void Main()
         {
             //1

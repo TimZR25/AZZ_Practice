@@ -1,6 +1,6 @@
 ﻿using System.IO.Pipes;
 
-namespace AZZ_Practice_1
+namespace AZZ_Practice_2
 {
     internal class Program
     {
@@ -23,7 +23,7 @@ namespace AZZ_Practice_1
 
         private static void PrintArrayReverse(int[] arr)
         {
-            Console.WriteLine("Реверснутый массив");
+            Console.WriteLine("Обратный массив");
 
             for (int i = (arr.Length - 1); i >= 0; i--)
             {
